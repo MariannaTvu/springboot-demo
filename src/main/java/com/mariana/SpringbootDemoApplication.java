@@ -25,7 +25,7 @@ public class SpringbootDemoApplication {
 	}
 
 	@RequestMapping("/news")
-	public String news(){
-		return "News should be here!";
-	}
+    public String changedNews(){
+	    return "News should be here!";
+    }
 }
