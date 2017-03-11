@@ -23,4 +23,9 @@ public class SpringbootDemoApplication {
 	public String sayHelloId(@PathVariable int id){
 		return "You typed "+id;
 	}
+
+	@RequestMapping("/news")
+	public String news(){
+		return "News should be here!";
+	}
 }
