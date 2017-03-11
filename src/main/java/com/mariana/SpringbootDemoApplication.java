@@ -15,9 +15,6 @@ public class SpringbootDemoApplication {
 
 	@RequestMapping("/hello")
 	public String sayHello(){
-		return "Hello Spring!";
+		return "Hello world!";
 	}
-
-	@RequestMapping("/news")
-	public String News() { return "News should be here!";}
 }
