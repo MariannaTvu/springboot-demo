@@ -7,25 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-@RestController
+
 public class SpringbootDemoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringbootDemoApplication.class, args);
 	}
 
-	@RequestMapping("/hello")
-	public String sayHello(){
-		return "Hello!";
-	}
-
-	@RequestMapping("/show/{id}")
-	public String sayHelloId(@PathVariable int id){
-		return "You typed "+id;
-	}
-
-	@RequestMapping("/news")
-    public String changedNews(){
-	    return "News should be here!";
-    }
 }
