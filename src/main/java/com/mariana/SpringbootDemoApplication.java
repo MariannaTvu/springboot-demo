@@ -21,6 +21,6 @@ public class SpringbootDemoApplication {
 
 	@RequestMapping("/show/{id}")
 	public String sayHelloId(@PathVariable int id){
-		return "You typed  "+id;
+		return "You typed "+id;
 	}
 }
