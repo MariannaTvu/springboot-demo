@@ -19,9 +19,11 @@ insert into baglab.material (name, price) values ('jeans', 28.1);
 insert into baglab.material (name, price) values ('leather', 38.5);
 
 
+insert into user  (login,password,email, firstname, lastname, roleId) values ('admin','admin','admin@gmail.com',  'Ivan', 'Onobrenko',1);
+insert into user  (login,password,email, firstname, lastname, roleId) values ('Anna','annaPass', 'demoanna@gmail.com',  'John', 'Doe', 2);
+insert into user  (login,password,email, firstname, lastname, roleId) values ('Peter','peterthebest','peter86@mail.ru','Petruchio','Petrov', 3);
+insert into user  (login,password,email, firstname, lastname, roleId) values ('Finn','demopass','finnthehuman@gmail.com', 'John','Doe2',4);
+insert into user  (login,password,email, firstname, lastname, roleId) values ('Karla','pass','turk@gmail.com', 'John','Doe3',2);
 
-insert into user  (login,password,email, roleId) values ('admin','admin','admin@gmail.com',1);
-insert into user  (login,password,email, roleId) values ('Anna','annaPass','demoanna@gmail.com',2);
-insert into user  (login,password,email, roleId) values ('Peter','peterthebest','peter86@mail.ru',3);
-insert into user  (login,password,email, roleId) values ('Finn','demopass','finnthehuman@gmail.com',4);
-insert into user  (login,password,email, roleId) values ('Karla','pass','turk@gmail.com',2);
+insert into baglab.shipping_adress (contact_name, country, street, apartment, state, city, zipcode, mobile, userId) values ('Ivan Onobrenko','Ukraine','Tkachenko','23','Kiev','Kiev','08187','+380683842905', 1);
+insert into baglab.shipping_adress (contact_name, country, street, apartment, state, city, zipcode, mobile, userId) values ('John Doe','USA','Main Avenu','3','Alabama', 'Calera','AL 35040','+1 205-668-0402', 2);

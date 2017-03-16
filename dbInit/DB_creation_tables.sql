@@ -55,15 +55,18 @@ DROP TABLE IF EXISTS `baglab`.`user` ;
 CREATE TABLE IF NOT EXISTS `baglab`.`user` (
   `idUser` INT(11) NOT NULL AUTO_INCREMENT,
   `login` VARCHAR(45) NOT NULL,
-  `password` VARCHAR(45) NOT NULL,
-  `email` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(64) NOT NULL,
+  `email` VARCHAR(254) NOT NULL,
+  `firstname` VARCHAR(45) NOT NULL,
+  `lastname` VARCHAR(45) NOT NULL,
   `roleId` INT NULL,
   `statusId` INT NULL default 1,
-  `user_update` TIMESTAMP,
-  `user_create` TIMESTAMP default now(),
+  `user_create` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `user_update` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   
   PRIMARY KEY (`idUser`),
   UNIQUE INDEX `login_UNIQUE` (`login` ASC),
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC),
   INDEX `fk_user_role1_idx` (`roleId` ASC),
   INDEX `fk_user_status1_idx` (`statusId` ASC),
   CONSTRAINT `fk_user_role1`
@@ -141,6 +144,8 @@ CREATE TABLE IF NOT EXISTS `baglab`.`order` (
   `userId` INT(11) NOT NULL,
   `totalPrice` DOUBLE NOT NULL,
   `order_status_idorder_status` INT NOT NULL,
+  `order_create` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `order_update` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`idOrder`),
   INDEX `fk_Order_User1_idx` (`userId` ASC),
   INDEX `fk_order_order_status1_idx` (`order_status_idorder_status` ASC),
@@ -223,6 +228,29 @@ CREATE TABLE IF NOT EXISTS `baglab`.`panel` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
+-- -----------------------------------------------------
+-- Table `baglab`.`shipping_adress`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `baglab`.`shipping_adress` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `contact_name` VARCHAR(45) NOT NULL,
+  `country` VARCHAR(45) NOT NULL,
+  `street` VARCHAR(45) NOT NULL,
+  `apartment` VARCHAR(45) NULL DEFAULT NULL,
+  `state` VARCHAR(45) NOT NULL,
+  `city` VARCHAR(45) NOT NULL,
+  `zipcode` VARCHAR(45) NULL DEFAULT NULL,
+  `mobile` VARCHAR(45) NULL DEFAULT NULL,
+  `userId` INT(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_shipping_adress_user1_idx` (`userId` ASC),
+  CONSTRAINT `fk_shipping_adress_user1`
+    FOREIGN KEY (`userId`)
+    REFERENCES `baglab`.`user` (`idUser`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
