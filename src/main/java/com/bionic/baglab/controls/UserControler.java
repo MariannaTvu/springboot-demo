@@ -1,7 +1,7 @@
-package com.mariana.controls;
+package com.bionic.baglab.controls;
 
-import com.mariana.DTO.UserMessageDTO;
-import com.mariana.services.UserService;
+import com.bionic.baglab.dto.UserMessageDTO;
+import com.bionic.baglab.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,7 +1,7 @@
-package com.mariana.services;
+package com.bionic.baglab.services;
 
-import com.mariana.DAO.UserDAO;
-import com.mariana.DTO.UserMessageDTO;
+import com.bionic.baglab.dao.UserDAO;
+import com.bionic.baglab.dto.UserMessageDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

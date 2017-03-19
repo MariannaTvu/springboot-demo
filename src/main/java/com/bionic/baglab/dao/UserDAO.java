@@ -1,6 +1,6 @@
-package com.mariana.DAO;
+package com.bionic.baglab.dao;
 
-import com.mariana.entity.UserEntity;
+import com.bionic.baglab.entity.UserEntity;
 import org.springframework.stereotype.Repository;
 
 /**

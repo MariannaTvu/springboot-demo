@@ -1,4 +1,4 @@
-package com.mariana;
+package com.bionic.baglab;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

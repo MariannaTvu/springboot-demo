@@ -1,6 +1,4 @@
-package com.mariana.DTO;
-
-import javax.validation.constraints.NotNull;
+package com.bionic.baglab.dto;
 
 /**
  * Created by Maryana on 11.03.2017.
