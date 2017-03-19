@@ -248,7 +248,7 @@ DEFAULT CHARACTER SET = utf8;
 DROP TABLE IF EXISTS `baglab`.`country` ;
 
 CREATE TABLE IF NOT EXISTS `baglab`.`country` (
-  `idcountry` INT NOT NULL,
+  `idcountry` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL,
   PRIMARY KEY (`idcountry`))
 ENGINE = InnoDB;
