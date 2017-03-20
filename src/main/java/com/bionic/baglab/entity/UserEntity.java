@@ -8,13 +8,13 @@ import java.util.Collection;
  * Created by username on 11.03.2017.
  */
 
-@Entity
-@Table(name = "user", schema = "baglab", catalog = "")
+/*@Entity
+@Table(name = "user", schema = "baglab", catalog = "")*/
 public class UserEntity {
 
     public final static String user = "Admin";
 
-    private int idUser;
+  /*  private int idUser;
     private String login;
     private String password;
     private String email;
@@ -232,5 +232,5 @@ public class UserEntity {
 
     public void setUserStatusByStatusId(UserStatusEntity userStatusByStatusId) {
         this.userStatusByStatusId = userStatusByStatusId;
-    }
+    }*/
 }

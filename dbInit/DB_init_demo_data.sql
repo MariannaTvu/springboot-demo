@@ -10,9 +10,9 @@ insert into baglab.user_status (code, description) values ('Active', 'Default st
 insert into baglab.user_status (code, description) values ('Inactive', 'User lost of permission');
 insert into baglab.user_status (code, description) values ('Bane', 'User is banned');
 
-insert into baglab.order_status (code, description) values ('accepted', 'order is accepted and send to factory');
-insert into baglab.order_status (code, description) values ('processing', 'order is processing by moderator');
-insert into baglab.order_status (code, description) values ('denied', 'order is denied by moderator');
+insert into baglab.orderStatus (code, description) values ('accepted', 'order is accepted and send to factory');
+insert into baglab.orderStatus (code, description) values ('processing', 'order is processing by moderator');
+insert into baglab.orderStatus (code, description) values ('denied', 'order is denied by moderator');
 
 insert into baglab.material (name, price) values ('cotton', 20.2);
 insert into baglab.material (name, price) values ('jeans', 28.1);
@@ -25,8 +25,6 @@ insert into user  (login,password,email, firstname, lastname, roleId) values ('P
 insert into user  (login,password,email, firstname, lastname, roleId) values ('Finn','demopass','finnthehuman@gmail.com', 'John','Doe2',4);
 insert into user  (login,password,email, firstname, lastname, roleId) values ('Karla','pass','turk@gmail.com', 'John','Doe3',2);
 
-insert into baglab.shipping_adress (contactName, countryId, street, apartment, state, city, zipcode, mobile, userId) values ('Ivan Onobrenko',132,'Tkachenko','23','Kiev','Kiev','08187','+380683842905', 1);
-insert into baglab.shipping_adress (contactName, countryId, street, apartment, state, city, zipcode, mobile, userId) values ('John Doe',135,'Main Avenu','3','Alabama', 'Calera','AL 35040','+1 205-668-0402', 2);
 
 #------------------------------------------------------
 insert into baglab.country (name) values ('Andorra');
@@ -279,3 +277,17 @@ insert into baglab.country (name) values ('Mayotte');
 insert into baglab.country (name) values ('South Africa');
 insert into baglab.country (name) values ('Zambia');
 insert into baglab.country (name) values ('Zimbabwe');
+
+insert into baglab.shipping_adress (contactName, countryId, street, apartment, state, city, zipcode, mobile, userId) values ('Ivan Onobrenko',132,'Tkachenko','23','Kiev','Kiev','08187','+380683842905', 1);
+insert into baglab.shipping_adress (contactName, countryId, street, apartment, state, city, zipcode, mobile, userId) values ('John Doe',135,'Main Avenu','3','Alabama', 'Calera','AL 35040','+1 205-668-0402', 2);
+
+#-------------------------
+insert into baglab.pages_type (type) VALUES ('ACTIVE');
+insert into baglab.pages_type (type) VALUES ('ARCHIVE');
+insert into baglab.pages_type (type) VALUES ('DELETED');
+
+
+insert into baglab.pages (body, header, pagesTypeId) VALUES ('body 1', 'header1', '1');
+insert into baglab.pages (body, header, pagesTypeId) VALUES ('body 2', 'header2', '1');
+insert into baglab.pages (body, header, pagesTypeId) VALUES ('body ARCHIVE', 'header ARCHIVE', '2');
+insert into baglab.pages (body, header, pagesTypeId) VALUES ('body DELETED', 'header DELETED', '3');

@@ -5,7 +5,7 @@ import java.util.Collection;
 
 
 @Entity
-@Table(name = "pages_type", schema = "baglab", catalog = "")
+@Table(name = "pages_type", schema = "baglab")
 public class PagesTypeEntity {
     private int idpagesType;
     private String type;

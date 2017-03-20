@@ -45,7 +45,6 @@ CREATE TABLE IF NOT EXISTS `baglab`.`material` (
   `deleted` TINYINT(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`idmaterial`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 4
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -61,7 +60,6 @@ CREATE TABLE IF NOT EXISTS `baglab`.`role` (
   `deleted` TINYINT(1) NULL DEFAULT 0,
   PRIMARY KEY (`idRole`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 6
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -76,7 +74,6 @@ CREATE TABLE IF NOT EXISTS `baglab`.`user_status` (
   `description` MEDIUMTEXT NOT NULL,
   PRIMARY KEY (`idstatus`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 4
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -156,7 +153,6 @@ CREATE TABLE IF NOT EXISTS `baglab`.`orderStatus` (
   `deleted` TINYINT(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`idorder_status`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 4
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -194,7 +190,7 @@ DEFAULT CHARACTER SET = utf8;
 DROP TABLE IF EXISTS `baglab`.`models_order` ;
 
 CREATE TABLE IF NOT EXISTS `baglab`.`models_order` (
-  `modelId` INT(11) NOT NULL,
+  `modelId` INT(11) NOT NULL AUTO_INCREMENT,
   `orderId` INT(11) NOT NULL,
   `count` INT(11) NOT NULL,
   `price` INT NOT NULL,
@@ -220,7 +216,7 @@ DEFAULT CHARACTER SET = utf8;
 DROP TABLE IF EXISTS `baglab`.`panel` ;
 
 CREATE TABLE IF NOT EXISTS `baglab`.`panel` (
-  `idPanel` INT(11) NOT NULL,
+  `idPanel` INT(11)  NOT NULL AUTO_INCREMENT,
   `pictureURL` VARCHAR(255) NULL,
   `colourRGB` INT(11) NOT NULL,
   `bagTypeId` INT(11) NOT NULL,
@@ -294,7 +290,7 @@ DEFAULT CHARACTER SET = utf8;
 DROP TABLE IF EXISTS `baglab`.`pages_type` ;
 
 CREATE TABLE IF NOT EXISTS `baglab`.`pages_type` (
-  `idpages_type` INT NOT NULL,
+  `idpages_type` INT  NOT NULL AUTO_INCREMENT,
   `type` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idpages_type`))
 ENGINE = InnoDB;
@@ -306,7 +302,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `baglab`.`pages` ;
 
 CREATE TABLE IF NOT EXISTS `baglab`.`pages` (
-  `idnews` INT NOT NULL,
+  `idnews` INT NOT NULL AUTO_INCREMENT,
   `body` MEDIUMTEXT NULL,
   `header` VARCHAR(45) NULL,
   `newsCreate` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -328,7 +324,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `baglab`.`feedback_status` ;
 
 CREATE TABLE IF NOT EXISTS `baglab`.`feedback_status` (
-  `idfeedback_status` INT NOT NULL,
+  `idfeedback_status` INT NOT NULL AUTO_INCREMENT,
   `status` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idfeedback_status`))
 ENGINE = InnoDB;
@@ -340,7 +336,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `baglab`.`feedback` ;
 
 CREATE TABLE IF NOT EXISTS `baglab`.`feedback` (
-  `idfeedback` INT NOT NULL,
+  `idfeedback` INT NOT NULL AUTO_INCREMENT,
   `text` MEDIUMTEXT NOT NULL,
   `userId` INT(11) NOT NULL,
   `userCreate` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
