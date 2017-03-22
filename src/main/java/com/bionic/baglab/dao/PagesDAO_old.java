@@ -1,12 +1,10 @@
-package com.bionic.baglab.dto;
+package com.bionic.baglab.dao;
 
 import com.bionic.baglab.entity.Pages;
 
 import java.util.List;
 
-/**
- * Created by username on 3/21/17.
- */
-public interface PagesDTO {
+
+public interface PagesDAO_old {
     public List<Pages> selectAll();
 }

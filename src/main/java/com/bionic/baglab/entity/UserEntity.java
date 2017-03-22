@@ -8,13 +8,13 @@ import java.util.Collection;
  * Created by username on 11.03.2017.
  */
 
-/*@Entity
-@Table(name = "user", schema = "baglab", catalog = "")*/
+@Entity
+@Table(name = "user", schema = "baglab")
 public class UserEntity {
 
     public final static String user = "Admin";
 
-  /*  private int idUser;
+    private int idUser;
     private String login;
     private String password;
     private String email;
@@ -25,12 +25,12 @@ public class UserEntity {
     private Timestamp userCreate;
     private Timestamp userUpdate;
     private byte deleted;
-    private Collection<FeedbackEntity> feedbacksByIdUser;
+   /* private Collection<FeedbackEntity> feedbacksByIdUser;
     private Collection<ModelEntity> modelsByIdUser;
     private Collection<OrderEntity> ordersByIdUser;
     private Collection<ShippingAdressEntity> shippingAdressesByIdUser;
     private RoleEntity roleByRoleId;
-    private UserStatusEntity userStatusByStatusId;
+    private UserStatusEntity userStatusByStatusId;*/
 
     @Id
     @Column(name = "idUser")
@@ -177,7 +177,7 @@ public class UserEntity {
     public void setDeleted(byte deleted) {
         this.deleted = deleted;
     }
-
+/*
     @OneToMany(mappedBy = "userByUserId")
     public Collection<FeedbackEntity> getFeedbacksByIdUser() {
         return feedbacksByIdUser;
@@ -232,5 +232,5 @@ public class UserEntity {
 
     public void setUserStatusByStatusId(UserStatusEntity userStatusByStatusId) {
         this.userStatusByStatusId = userStatusByStatusId;
-    }*/
+    } */
 }

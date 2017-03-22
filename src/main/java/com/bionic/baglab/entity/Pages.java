@@ -7,7 +7,7 @@ import java.sql.Timestamp;
 
 @Entity
 @Table(name = "pages", schema = "baglab")
-public class PagesEntity {
+public class Pages {
     private int idnews;
     private String body;
     private String header;
@@ -70,7 +70,7 @@ public class PagesEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        PagesEntity that = (PagesEntity) o;
+        Pages that = (Pages) o;
 
         if (idnews != that.idnews) return false;
         if (body != null ? !body.equals(that.body) : that.body != null) return false;

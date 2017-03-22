@@ -1,6 +1,7 @@
 package com.bionic.baglab.controls;
 
-import com.bionic.baglab.entity.PagesEntity;
+import com.bionic.baglab.dao.PagesDao;
+import com.bionic.baglab.entity.Pages;
 import com.bionic.baglab.services.PagesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,10 +16,14 @@ import java.util.List;
 @RestController
 public class PagesController {
     @Autowired
-    PagesService pagesService;
+    private PagesService pagesService;
+/*
+    @Autowired
+    private PagesDao daoRepo;*/
 
     @RequestMapping("/pages")
-    public List<PagesEntity> showPages(){
+    public List<Pages> showPages(){
+        System.out.println("size= " + pagesService.getPagesEntities());
         return pagesService.getPagesEntities();
     }
 

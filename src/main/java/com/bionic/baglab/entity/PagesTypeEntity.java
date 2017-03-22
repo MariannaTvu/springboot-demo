@@ -9,7 +9,7 @@ import java.util.Collection;
 public class PagesTypeEntity {
     private int idpagesType;
     private String type;
-    private Collection<PagesEntity> pagesByIdpagesType;
+    private Collection<Pages> pagesByIdpagesType;
 
     @Id
     @Column(name = "idpages_type")
@@ -52,11 +52,11 @@ public class PagesTypeEntity {
     }
 
     @OneToMany(mappedBy = "pagesTypeByPagesTypeId")
-    public Collection<PagesEntity> getPagesByIdpagesType() {
+    public Collection<Pages> getPagesByIdpagesType() {
         return pagesByIdpagesType;
     }
 
-    public void setPagesByIdpagesType(Collection<PagesEntity> pagesByIdpagesType) {
+    public void setPagesByIdpagesType(Collection<Pages> pagesByIdpagesType) {
         this.pagesByIdpagesType = pagesByIdpagesType;
     }
 }
