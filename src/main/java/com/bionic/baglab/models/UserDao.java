@@ -1,10 +1,8 @@
-package com.bionic.baglab.dao;
+package com.bionic.baglab.models;
 
-import com.bionic.baglab.entity.PagesEntity;
 import org.springframework.data.repository.CrudRepository;
 
 import javax.transaction.Transactional;
-import java.util.List;
 
 /**
  * A DAO for the entity User is simply created by extending the CrudRepository
@@ -15,17 +13,14 @@ import java.util.List;
  * 
  * @author netgloo
  */
-
-@Transactional
-public interface PagesDao extends CrudRepository<PagesEntity, Long> {
+//@Transactional
+public interface UserDao {//extends CrudRepository<User, Long> {
 
   /**
-   * Return all pages or null if no is found.
+   * Return the user having the passed email or null if no user is found.
    * 
-   *
+   * @param email the user email.
    */
-  public List<PagesEntity> findAll();
-
-  public PagesEntity findByBody(String body);
+  public User findByEmail(String email);
 
 } // class UserDao

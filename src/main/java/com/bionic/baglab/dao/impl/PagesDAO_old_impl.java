@@ -5,7 +5,7 @@ package com.bionic.baglab.dao.impl;
  */
 
 import com.bionic.baglab.dao.PagesDAO_old;
-import com.bionic.baglab.entity.Pages;
+import com.bionic.baglab.entity.PagesEntity;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -14,15 +14,15 @@ import javax.persistence.Query;
 import java.util.List;
 
 @Repository
-public class PagesDAO_old_impl implements PagesDAO_old{
+public class PagesDAO_old_impl implements PagesDAO_old {
     @PersistenceContext
     private EntityManager em;
 
 
-    public List<Pages> selectAll() {
-        Query query = em.createQuery("SELECT  p FROM pages p");
-        List<Pages> pagesList = query.getResultList();
-        System.out.println("SIZE of list-----------------" +pagesList.size());
-        return pagesList;
+    public List<PagesEntity> selectAll() {
+        Query query = em.createQuery("SELECT  p FROM PagesEntity p");
+        List<PagesEntity> pagesEntityList = query.getResultList();
+        System.out.println("----------------" + pagesEntityList.get(0).toString());
+        return pagesEntityList;
     }
 }

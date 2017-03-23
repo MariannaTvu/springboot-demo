@@ -1,4 +1,4 @@
-package com.bionic.baglab.controls;
+package com.bionic.baglab.controllers;
 
 import com.bionic.baglab.dto.UserMessageDTO;
 import com.bionic.baglab.services.UserService;
@@ -14,7 +14,7 @@ import java.util.Optional;
  * Created by Maryana on 11.03.2017.
  */
 @RestController
-public class UserControler {
+public class UserControlerOld {
 
     @Autowired
     private UserService userService;

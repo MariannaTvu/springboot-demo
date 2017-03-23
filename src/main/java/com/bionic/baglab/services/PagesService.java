@@ -1,7 +1,7 @@
 package com.bionic.baglab.services;
 
 import com.bionic.baglab.dto.PagesDTO;
-import com.bionic.baglab.entity.Pages;
+import com.bionic.baglab.entity.PagesEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +15,7 @@ public class PagesService {
     @Autowired
     PagesDTO pagesDTO;
 
-    public List<Pages> getPagesEntities(){
+    public List<PagesEntity> getPagesEntities(){
         return pagesDTO.selectAll();
     }
 }

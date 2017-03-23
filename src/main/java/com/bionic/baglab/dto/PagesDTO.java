@@ -1,6 +1,6 @@
 package com.bionic.baglab.dto;
 
-import com.bionic.baglab.entity.Pages;
+import com.bionic.baglab.entity.PagesEntity;
 
 import java.util.List;
 
@@ -8,5 +8,5 @@ import java.util.List;
  * Created by username on 3/21/17.
  */
 public interface PagesDTO {
-    public List<Pages> selectAll();
+    public List<PagesEntity> selectAll();
 }

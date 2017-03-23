@@ -9,7 +9,7 @@ import java.util.Collection;
 public class PagesTypeEntity {
     private int idpagesType;
     private String type;
-    private Collection<Pages> pagesByIdpagesType;
+    private Collection<PagesEntity> pagesEntityByIdpagesType;
 
     @Id
     @Column(name = "idpages_type")
@@ -50,13 +50,13 @@ public class PagesTypeEntity {
         result = 31 * result + (type != null ? type.hashCode() : 0);
         return result;
     }
-
-    @OneToMany(mappedBy = "pagesTypeByPagesTypeId")
-    public Collection<Pages> getPagesByIdpagesType() {
-        return pagesByIdpagesType;
-    }
-
-    public void setPagesByIdpagesType(Collection<Pages> pagesByIdpagesType) {
-        this.pagesByIdpagesType = pagesByIdpagesType;
-    }
+//
+//    @OneToMany(mappedBy = "pagesTypeByPagesTypeId")
+//    public Collection<PagesEntity> getPagesByIdpagesType() {
+//        return pagesEntityByIdpagesType;
+//    }
+//
+//    public void setPagesByIdpagesType(Collection<PagesEntity> pagesEntityByIdpagesType) {
+//        this.pagesEntityByIdpagesType = pagesEntityByIdpagesType;
+//    }
 }
