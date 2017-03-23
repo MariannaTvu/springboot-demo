@@ -24,12 +24,14 @@ public class PagesController {
     @RequestMapping("/pages")
     public List<PagesEntity> showPages(){
         //System.out.println("size= " + pagesService.getPagesEntities());
-        return pagesService.getPagesEntities();
+        //return pagesService.getPagesEntities();
         //List<PagesEntity> list = new ArrayList<>() ;
         //return list;
         //System.out.println("size= " + pagesDaoRepo.findAll().size());
-        //return pagesDaoRepo.findAll();
-
+        PagesEntity p = (PagesEntity) pagesDaoRepo.findAll().get(0);
+        String time = String.valueOf(p.getNewsCreate());
+        System.out.println("----------------" + time);
+        return pagesDaoRepo.findAll();
 
     }
 

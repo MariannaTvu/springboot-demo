@@ -51,10 +51,10 @@ public class PagesEntity {
         this.header = header;
     }
 
-   // @Basic
-    @Type(type="timestamp")
+    @Basic
+    //@Type(type="timestamp")
     //@Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "newsCreate", insertable=false)
+    @Column(name = "newsCreate", insertable=false, updatable = false)
     public Timestamp getNewsCreate() {
         return newsCreate;
     }
@@ -63,7 +63,7 @@ public class PagesEntity {
         this.newsCreate = newsCreate;
     }
 
-   /* @Basic
+    @Basic
     @Column(name = "newsUpdate", insertable=false, updatable=false)
     public Timestamp getNewsUpdate() {
         return newsUpdate;
@@ -72,7 +72,7 @@ public class PagesEntity {
     public void setNewsUpdate(Timestamp newsUpdate) {
         this.newsUpdate = newsUpdate;
     }
-*/
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -116,7 +116,7 @@ public class PagesEntity {
                 ", body='" + body + '\'' +
                 ", header='" + header + '\'' +
                 ", newsCreate=" + newsCreate +
-                ", newsUpdate="  +
+                ", newsUpdate="  + newsUpdate +
                 ", pagesTypeByPagesTypeId=" + pagesTypeByPagesTypeId +
                 '}';
     }
