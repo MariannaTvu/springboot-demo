@@ -32,7 +32,7 @@ public class PagesEntity {
     }
 
     @Basic
-    @Column(name = "body")
+    @Column(name = "body", columnDefinition="mediumtext")
     public String getBody() {
         return body;
     }

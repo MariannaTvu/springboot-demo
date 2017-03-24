@@ -1,7 +1,8 @@
 package com.bionic.baglab.controllers;
 
-import com.bionic.baglab.models.User;
-import com.bionic.baglab.models.UserDao;
+
+import com.bionic.baglab.dao.UserDao;
+import com.bionic.baglab.entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,11 +14,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
  *
  * @author netgloo
  */
-//@Controller
+@Controller
 public class UserController {
 
-  //@Autowired
-  //private UserDao userDao;
+  @Autowired
+  private UserDao userDao;
 
 
   // ------------------------
@@ -31,31 +32,31 @@ public class UserController {
    * @param name User's name
    * @return A string describing if the user is succesfully created or not.
    */
-  //@RequestMapping("/create")
- // @ResponseBody
- // public String create(String email, String name) {
-   /* User user = null;
+  @RequestMapping("/create")
+  @ResponseBody
+  public String create(String email, String name) {
+    UserEntity user = null;
     try {
-      user = new User(email, name);
+      user = new UserEntity(email, name);
       userDao.save(user);
     }
     catch (Exception ex) {
       return "Error creating the user: " + ex.toString();
     }
-    return "User succesfully created! (id = " + user.getId() + ")";
+    return "User succesfully created! (id = " + user.getIdUser() + ")";
   }
   
-  *//**
+    /**
    * /delete  --> Delete the user having the passed id.
    * 
    * @param id The id of the user to delete
    * @return A string describing if the user is succesfully deleted or not.
-   *//*
+   */
   @RequestMapping("/delete")
   @ResponseBody
-  public String delete(long id) {
+  public String delete(int id) {
     try {
-      User user = new User(id);
+      UserEntity user = new UserEntity(id);
       userDao.delete(user);
     }
     catch (Exception ex) {
@@ -64,19 +65,19 @@ public class UserController {
     return "User succesfully deleted!";
   }
   
-  *//**
+  /**
    * /get-by-email  --> Return the id for the user having the passed email.
    * 
    * @param email The email to search in the database.
    * @return The user id or a message error if the user is not found.
-   *//*
+   */
   @RequestMapping("/get-by-email")
   @ResponseBody
   public String getByEmail(String email) {
     String userId;
     try {
-      User user = userDao.findByEmail(email);
-      userId = String.valueOf(user.getId());
+      UserEntity user = userDao.findByEmail(email);
+      userId = String.valueOf(user.getIdUser());
     }
     catch (Exception ex) {
       return "User not found";
@@ -84,7 +85,7 @@ public class UserController {
     return "The user id is: " + userId;
   }
   
-  *//**
+  /**
    * /update  --> Update the email and the name for the user in the database 
    * having the passed id.
    * 
@@ -92,15 +93,17 @@ public class UserController {
    * @param email The new email.
    * @param name The new name.
    * @return A string describing if the user is succesfully updated or not.
-   *//*
+   */
   @RequestMapping("/update")
   @ResponseBody
-  public String updateUser(long id, String email, String name) {
+  public String updateUser(int id, String email, String name) {
     try {
-      User user = userDao.findOne(id);
+      UserEntity user = userDao.findOne(id);
+      System.out.println("lastname------" + name);
       user.setEmail(email);
-      user.setName(name);
+      user.setLastname(name);
       userDao.save(user);
+
     }
     catch (Exception ex) {
       return "Error updating the user: " + ex.toString();
@@ -112,5 +115,5 @@ public class UserController {
   // PRIVATE FIELDS
   // ------------------------
 
-*/
+
 } // class UserController

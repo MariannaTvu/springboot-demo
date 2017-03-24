@@ -1,5 +1,7 @@
 package com.bionic.baglab.entity;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Collection;
@@ -25,7 +27,19 @@ public class UserEntity {
     private Timestamp userCreate;
     private Timestamp userUpdate;
     private byte deleted;
-   /* private Collection<FeedbackEntity> feedbacksByIdUser;
+
+    public UserEntity() {
+    }
+
+    public UserEntity(int id) {
+        this.idUser = id;
+    }
+
+    public UserEntity(String email, String lastname) {
+        this.email = email;
+        this.lastname = lastname;
+    }
+    /* private Collection<FeedbackEntity> feedbacksByIdUser;
     private Collection<ModelEntity> modelsByIdUser;
     private Collection<OrderEntity> ordersByIdUser;
     private Collection<ShippingAdressEntity> shippingAdressesByIdUser;
@@ -169,7 +183,8 @@ public class UserEntity {
     }
 
     @Basic
-    @Column(name = "deleted")
+    @Column(name = "deleted", columnDefinition = "BitTypeDescriptor")
+    //@Type(type = "org.hibernate.type.BigIntegerType") org.hibernate.type.descr
     public byte getDeleted() {
         return deleted;
     }

@@ -13,10 +13,10 @@ import java.util.Optional;
 /**
  * Created by Maryana on 11.03.2017.
  */
-@RestController
+//@RestController
 public class UserControlerOld {
 
-    @Autowired
+   /* @Autowired
     private UserService userService;
 
     @RequestMapping("/hello")
@@ -37,6 +37,6 @@ public class UserControlerOld {
     @RequestMapping("/news")
     public String changedNews(){
         return "News should be here!";
-    }
+    }*/
 
 }
